@@ -15,6 +15,11 @@ public class ProductController {
 
     private final ProductService service;
 
+    @GetMapping("/name")
+    public String getName(){
+        return "Kevin Ameda Kisevu";
+    }
+
     @PostMapping
     public ResponseEntity<Integer> createProduct(
             @RequestBody @Valid ProductRequest request

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 public class NotificationProducer {
-
     private final KafkaTemplate<String, PaymentNotificationRequest> kafkaTemplate;
 
     public void sendPaymentNotification(PaymentNotificationRequest request) {
@@ -21,7 +20,6 @@ public class NotificationProducer {
                 .withPayload(request)
                 .setHeader(KafkaHeaders.TOPIC, "payment-topic")
                 .build();
-
         kafkaTemplate.send(message);
     }
 }

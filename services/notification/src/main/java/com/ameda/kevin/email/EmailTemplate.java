@@ -8,6 +8,7 @@ public enum EmailTemplate {
 
     @Getter
     private final String template;
+
     @Getter
     private final String subject;
 
